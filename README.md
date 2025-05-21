@@ -35,7 +35,7 @@ import matplotlib.pyplot as plt
 ```py
 img = np.zeros((100,400), dtype = 'uint8')
 font = cv2.FONT_HERSHEY_SIMPLEX
-cv2.putText(img,"SERENDIPITY",(5,70),font,2,(255,255,255),5,cv2.LINE_AA)
+cv2.putText(img,"VARSHINI",(5,70),font,2,(255,255,255),5,cv2.LINE_AA)
 ```
 ###  Create the structuring element
 ```py
@@ -58,16 +58,8 @@ plt.axis('off')
 ```
 ## Output:
 
-### Display the input Image
-![image](https://github.com/kanishka2305/erosion--dilation/assets/113497357/1df6e6a7-ac1e-41a1-9d43-b0d5ff2f6068)
+![download](https://github.com/user-attachments/assets/79dd06bc-1e4f-4ad4-b244-6b1b6bf1c351)
 
-
-### Display the Eroded Image
-![image](https://github.com/kanishka2305/erosion--dilation/assets/113497357/13009d6b-57fe-4da0-8f04-738a65c0e611)
-
-
-### Display the Dilated Image
-![image](https://github.com/kanishka2305/erosion--dilation/assets/113497357/a0404c10-8e1b-49a1-a251-2a87626ecd00)
 
 
 ## Result
