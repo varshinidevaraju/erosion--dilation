@@ -1,4 +1,4 @@
-# Implementation-of-Erosion-and-Dilation
+# EXP.9 Implementation-of-Erosion-and-Dilation
 ## Aim
 To implement Erosion and Dilation using Python and OpenCV.
 ## Software Required
@@ -18,63 +18,56 @@ Create the structuring element
 Erode the image
 
 ### Step5:
-Dilate the Image
+Dilate  the image
 
  
 ## Program:
-```
 NAME:VARSHINI D
 REG NO:212223230234
 
-# Import the necessary packages
-
-import cv2
+###  Import the necessary packages
+```py
 import numpy as np
-from matplotlib import pyplot as plt
+import cv2
+import matplotlib.pyplot as plt
+```
+### Create the Text using cv2.putText
+```py
+img = np.zeros((100,400), dtype = 'uint8')
+font = cv2.FONT_HERSHEY_SIMPLEX
+cv2.putText(img,"SERENDIPITY",(5,70),font,2,(255,255,255),5,cv2.LINE_AA)
+```
+###  Create the structuring element
+```py
+kernel = np.ones((5,5),np.uint8)
+kernel1 = cv2.getStructuringElement(cv2.MORPH_CROSS,(5,5))
+cv2.erode(img,kernel)
+```
+### Erode the image
+```py
+img_erode = cv2.erode(img,kernel1)
+plt.imshow(img_erode)
+plt.axis('off')
 
-# Create the Text using cv2.putText
-
-##  Load the image
-
-img1=np.zeros((100,700),dtype='uint8')
-font=cv2.FONT_HERSHEY_COMPLEX_SMALL
-
-# Create the text using cv2.putText
-
-cv2.putText(img1,'VIGNESH V' ,(5,70),font,4,(255),2,cv2.LINE_AA)
-
-# Create the structuring element
-
-kernel1=cv2.getStructuringElement(cv2.MORPH_CROSS,(5,5))
-
-
-# Erode the image
-
-img_dilate=cv2.dilate(img1,kernel1)
-img_erode=cv2.erode(img1,kernel1)
-
-# Dilate the image
-
-plt.figure(figsize=(12, 5))
-plt.subplot(1,3,1)
-plt.imshow(img1,cmap='gray')
-plt.subplot(1,3,2)
-plt.imshow(img_dilate,cmap='gray')
-plt.subplot(1,3,3)
-plt.imshow(img_erode,cmap='gray')
+```
+### Dilate the image
+```py
+img_dilate = cv2.dilate(img,kernel1)
+plt.imshow(img_dilate)
+plt.axis('off')
 ```
 ## Output:
 
 ### Display the input Image
-![image](https://github.com/user-attachments/assets/fceaf68b-8ffd-4915-bd09-d6de1a69c272)
+![image](https://github.com/kanishka2305/erosion--dilation/assets/113497357/1df6e6a7-ac1e-41a1-9d43-b0d5ff2f6068)
 
 
 ### Display the Eroded Image
-![image](https://github.com/user-attachments/assets/e94f802f-f2a0-4471-b2da-d1f7a52b1d52)
+![image](https://github.com/kanishka2305/erosion--dilation/assets/113497357/13009d6b-57fe-4da0-8f04-738a65c0e611)
 
 
 ### Display the Dilated Image
-![image](https://github.com/user-attachments/assets/84c6e169-e574-4811-a50e-d56d58a31943)
+![image](https://github.com/kanishka2305/erosion--dilation/assets/113497357/a0404c10-8e1b-49a1-a251-2a87626ecd00)
 
 
 ## Result
